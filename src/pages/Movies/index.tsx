@@ -4,13 +4,19 @@ import { bindActionCreators } from "redux";
 
 import { getData } from "../../redux/thunks/movies";
 
+import Container from "../../components/Container";
+
 const Movies = ({ data, getData }) => {
   console.log(data);
 
   useEffect(() => {
     getData();
   }, []);
-  return <h1>app</h1>;
+  return (
+    <Container>
+      <h1>movies</h1>
+    </Container>
+  );
 };
 
 const mapStateToProps = state => ({
