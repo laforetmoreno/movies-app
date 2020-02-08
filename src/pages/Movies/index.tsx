@@ -6,16 +6,16 @@ import { getData } from "../../redux/thunks/movies";
 
 import Container from "../../components/Container";
 import Header from "../../components/Header";
+import MoviesList from "../../components/MoviesList";
 
 const Movies = ({ data, getData }) => {
-  console.log(data);
-
   useEffect(() => {
     getData();
   }, []);
   return (
     <Container>
       <Header />
+      <MoviesList movies={data} />
     </Container>
   );
 };

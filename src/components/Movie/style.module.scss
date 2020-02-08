@@ -1,0 +1,35 @@
+.wrapper {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin-bottom: 30px;
+  position: relative;
+
+  &:hover {
+    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+    transform: translateY(-5px);
+  }
+
+  .title {
+    margin-top: 10px;
+  }
+
+  @media (max-width: 767px) {
+    .image {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .image {
+      width: 300px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .image {
+      width: 200px;
+    }
+  }
+}

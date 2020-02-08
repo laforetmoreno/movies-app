@@ -1,0 +1,22 @@
+.wrapper {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  @media (min-width: 1200px) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
