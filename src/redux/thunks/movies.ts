@@ -6,6 +6,7 @@ export const getData = () => async dispatch => {
 
   try {
     const { data } = await api("/v0/templates/highlights/1/partnership/home");
+
     dispatch({ type: LOAD_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: LOAD_ERROR });
