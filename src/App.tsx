@@ -1,13 +1,15 @@
 import React from "react";
 import { Provider } from "react-redux";
+import { createBrowserHistory } from "history";
 
+import Routes from "./Routes";
 import { store } from "./store";
 
-import Movies from "./pages/Movies";
+const customHistory = createBrowserHistory();
 
 const App = () => (
   <Provider store={store}>
-    <Movies />
+    <Routes history={customHistory} />
   </Provider>
 );
 

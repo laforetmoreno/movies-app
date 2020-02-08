@@ -1,10 +1,24 @@
-.title,
-.subTitle {
-  color: #fff;
-}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 
-.title {
-}
+  @media (max-width: 767px) {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
 
-.subTitle {
+  .title,
+  .subTitle {
+    color: #fff;
+  }
+
+  .select {
+    width: 300px;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
 }

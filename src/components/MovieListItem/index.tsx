@@ -4,7 +4,7 @@ import TagList from "../TagList";
 
 import style from "./style.module.scss";
 
-const Movie = ({ movie }: any) => (
+const MovieListItem = ({ movie }: any) => (
   <li>
     <a
       className={style.wrapper}
@@ -19,4 +19,4 @@ const Movie = ({ movie }: any) => (
   </li>
 );
 
-export default Movie;
+export default MovieListItem;

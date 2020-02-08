@@ -8,13 +8,14 @@ import Container from "../../components/Container";
 import Header from "../../components/Header";
 import MoviesList from "../../components/MoviesList";
 
-const Movies = ({ data, getData }) => {
+const Home = ({ data, getData }) => {
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
+
   return (
     <Container>
-      <Header />
+      <Header movies={data} />
       <MoviesList movies={data} />
     </Container>
   );
@@ -32,4 +33,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Movies);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
