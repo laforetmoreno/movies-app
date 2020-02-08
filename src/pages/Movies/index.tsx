@@ -5,6 +5,7 @@ import { bindActionCreators } from "redux";
 import { getData } from "../../redux/thunks/movies";
 
 import Container from "../../components/Container";
+import Header from "../../components/Header";
 
 const Movies = ({ data, getData }) => {
   console.log(data);
@@ -14,7 +15,7 @@ const Movies = ({ data, getData }) => {
   }, []);
   return (
     <Container>
-      <h1>movies</h1>
+      <Header />
     </Container>
   );
 };
