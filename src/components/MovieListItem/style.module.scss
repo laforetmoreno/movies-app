@@ -1,5 +1,7 @@
+@import "../../styles/variables";
+
 .wrapper {
-  color: #fff;
+  color: $white;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -15,20 +17,16 @@
     margin-top: 10px;
   }
 
-  @media (max-width: 767px) {
-    .image {
+  .image {
+    @media (max-width: 767px) {
       width: 100%;
     }
-  }
 
-  @media (min-width: 768px) {
-    .image {
+    @media (min-width: 768px) {
       width: 300px;
     }
-  }
 
-  @media (min-width: 1200px) {
-    .image {
+    @media (min-width: 1200px) {
       width: 200px;
     }
   }

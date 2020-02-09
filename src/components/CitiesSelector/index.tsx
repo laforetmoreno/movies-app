@@ -19,13 +19,7 @@ const CitiesSelector = ({ className, onChange, history, city }: Props) => {
   };
 
   return (
-    <SelectProvider
-      placeholder={city.label}
-      onChange={handleChange}
-      className={className}
-      options={availableCities}
-      formatOptionLabel={null}
-    />
+    <SelectProvider placeholder={city.label} onChange={handleChange} className={className} options={availableCities} />
   );
 };
 

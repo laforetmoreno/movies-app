@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -11,7 +13,7 @@
 
   .title,
   .subTitle {
-    color: #fff;
+    color: $white;
   }
 
   .select {

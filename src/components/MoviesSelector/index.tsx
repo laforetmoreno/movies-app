@@ -9,8 +9,13 @@ interface Props {
   options?: any;
 }
 
+interface Option {
+  siteURL?: string;
+  title?: string;
+}
+
 const MovieSelector = ({ className, history, options }: Props) => {
-  const formattedOptions = options.map(option => ({
+  const formattedOptions = options.map((option: Option) => ({
     value: option.siteURL,
     label: option.title
   }));
