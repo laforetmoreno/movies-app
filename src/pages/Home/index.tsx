@@ -30,7 +30,6 @@ interface OwnProps {
 type Props = StateProps & DispatchProps & OwnProps;
 
 const Home = ({ data, getData, history, changeCity, city, loading }: Props) => {
-  console.log(data);
   useEffect(() => {
     getData(city.value);
   }, [getData, city.value]);

@@ -3,6 +3,7 @@ export interface Movie {
   title: string;
   city: string;
   siteURL: string;
+  tags?: any;
 }
 
 export interface Actions {

@@ -16,8 +16,8 @@ const MovieSelector = ({ className, onChange, history, options }: Props) => {
   };
 
   const formattedOptions = options.map(option => ({
-    value: option.event.siteURL,
-    label: option.event.title
+    value: option.siteURL,
+    label: option.title
   }));
 
   const formatOptionLabel = ({ value, label }) => {
