@@ -1,7 +1,9 @@
+import { Dispatch } from "redux";
+
 import api from "../../services/api";
 import { LOAD_REQUEST, LOAD_SUCCESS, LOAD_ERROR } from "../actions/actionTypes";
 
-export const getData = (city = 1) => async dispatch => {
+export const getData = (city: string) => async (dispatch: Dispatch) => {
   dispatch({ type: LOAD_REQUEST });
 
   try {

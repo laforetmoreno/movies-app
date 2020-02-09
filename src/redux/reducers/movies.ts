@@ -1,14 +1,16 @@
+import { Reducer } from "redux";
+
 import { LOAD_REQUEST, LOAD_SUCCESS, LOAD_ERROR } from "../actions/actionTypes";
 
-import { Actions } from "../../types";
+import { Actions, MoviesState } from "../../types";
 
-const INITIAL_STATE = {
+const INITIAL_STATE: MoviesState = {
   data: [],
   error: false,
   loading: false
 };
 
-function movies(state = INITIAL_STATE, action: Actions) {
+const movies: Reducer<MoviesState> = (state = INITIAL_STATE, action: Actions) => {
   switch (action.type) {
     case LOAD_REQUEST:
       return {
@@ -34,6 +36,6 @@ function movies(state = INITIAL_STATE, action: Actions) {
     default:
       return state;
   }
-}
+};
 
 export default movies;

@@ -10,3 +10,8 @@ export const availableCities = [
     value: 2
   }
 ];
+
+export const routes = {
+  home: "/",
+  homeId: "/:id"
+};

@@ -9,7 +9,11 @@ var tagsDict: any = {
   Culturais: "culturais"
 };
 
-const Tag = ({ tag }: any) => {
+interface Props {
+  tag?: any;
+}
+
+const Tag = ({ tag }: Props) => {
   const className: any = tagsDict[tag];
 
   return <li className={`${style.tag} ${style[className]}`}>{tag}</li>;

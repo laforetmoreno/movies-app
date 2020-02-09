@@ -1,21 +1,21 @@
 import React from "react";
 import Select from "react-select";
 
-interface IOptions {
+interface Options {
   label?: string;
   path?: string;
   value?: number;
 }
 
-interface IProps {
+interface Props {
   placeholder?: string;
-  onChange?: ({ label, path, value }: IOptions) => void;
+  onChange?: ({ label, path, value }: Options) => void;
   className?: string;
-  options?: IOptions[];
+  options?: Options[];
   formatOptionLabel?: any;
 }
 
-const SelectProvider = ({ placeholder, onChange, className, options, formatOptionLabel }: IProps) => (
+const SelectProvider = ({ placeholder, onChange, className, options, formatOptionLabel }: Props) => (
   <Select
     formatOptionLabel={formatOptionLabel}
     placeholder={placeholder}

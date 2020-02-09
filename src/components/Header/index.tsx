@@ -6,7 +6,7 @@ import { Movie } from "../../types";
 
 import style from "./style.module.scss";
 
-interface IProps {
+interface Props {
   title?: string;
   onChange?: (city: any) => void;
   subTitle?: string;
@@ -15,7 +15,7 @@ interface IProps {
   city?: object;
 }
 
-const Header = ({ title = "Filmes", subTitle = "Em cartaz", onChange, history, movies, city }: IProps) => (
+const Header = ({ title = "Filmes", subTitle = "Em cartaz", onChange, history, movies, city }: Props) => (
   <div className={style.wrapper}>
     <div>
       <h1 className={style.title}>{title}</h1>

@@ -3,7 +3,14 @@ import SelectProvider from "../SelectProvider";
 
 import style from "./style.module.scss";
 
-const MovieSelector = ({ className, onChange, history, options }) => {
+interface Props {
+  className?: string;
+  onChange?: (city: any) => void;
+  history?: object;
+  options?: any;
+}
+
+const MovieSelector = ({ className, onChange, history, options }: Props) => {
   const handleChange = value => {
     if (onChange) onChange(value);
   };

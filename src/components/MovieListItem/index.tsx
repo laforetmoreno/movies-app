@@ -4,7 +4,11 @@ import TagList from "../TagList";
 
 import style from "./style.module.scss";
 
-const MovieListItem = ({ movie }: any) => (
+interface Props {
+  movie?: any;
+}
+
+const MovieListItem = ({ movie }: Props) => (
   <li>
     <a
       className={style.wrapper}

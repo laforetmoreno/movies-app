@@ -1,15 +1,34 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+import { bindActionCreators, Dispatch } from "redux";
 
 import { getData } from "../../redux/thunks/movies";
 import { changeCity } from "../../redux/thunks/city";
+
+import { City, Movie } from "../../types";
 
 import Container from "../../components/Container";
 import Header from "../../components/Header";
 import MoviesList from "../../components/MoviesList";
 
-const Home = ({ data, getData, history, changeCity, city }) => {
+interface StateProps {
+  data?: Movie[];
+  city?: City;
+}
+
+interface DispatchProps {
+  getData?: (city: string) => void;
+  changeCity?: (city: object) => void;
+}
+
+interface OwnProps {
+  history?: any;
+}
+
+type Props = StateProps & DispatchProps & OwnProps;
+
+const Home = ({ data, getData, history, changeCity, city }: Props) => {
+  console.log(data);
   useEffect(() => {
     getData(city.value);
   }, [getData, city.value]);
@@ -30,11 +49,10 @@ const Home = ({ data, getData, history, changeCity, city }) => {
 const mapStateToProps = state => ({
   data: state.movies.data,
   loading: state.movies.loading,
-  error: state.movies.error,
   city: state.city.data
 });
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
     getData: bindActionCreators(getData, dispatch),
     changeCity: bindActionCreators(changeCity, dispatch)

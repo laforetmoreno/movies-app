@@ -4,7 +4,14 @@ import SelectProvider from "../SelectProvider";
 
 import { availableCities } from "../../constants";
 
-const CitiesSelector = ({ className, onChange, history, city }) => {
+interface Props {
+  onChange?: (city: any) => void;
+  className?: string;
+  history?: object;
+  city?: any;
+}
+
+const CitiesSelector = ({ className, onChange, history, city }: Props) => {
   const handleChange = value => {
     if (onChange) onChange(value);
   };

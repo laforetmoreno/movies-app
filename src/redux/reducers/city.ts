@@ -1,8 +1,10 @@
+import { Reducer } from "redux";
+
 import { CHANGE_CITY } from "../actions/actionTypes";
 
-import { Actions } from "../../types";
+import { Actions, CitiesState } from "../../types";
 
-const INITIAL_STATE = {
+const INITIAL_STATE: CitiesState = {
   data: {
     name: "rio-de-janeiro",
     value: 1,
@@ -10,7 +12,7 @@ const INITIAL_STATE = {
   }
 };
 
-function city(state = INITIAL_STATE, action: Actions) {
+const city: Reducer<CitiesState> = (state = INITIAL_STATE, action: Actions) => {
   switch (action.type) {
     case CHANGE_CITY:
       return {
@@ -20,6 +22,6 @@ function city(state = INITIAL_STATE, action: Actions) {
     default:
       return state;
   }
-}
+};
 
 export default city;
