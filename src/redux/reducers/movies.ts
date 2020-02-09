@@ -1,15 +1,12 @@
 import { LOAD_REQUEST, LOAD_SUCCESS, LOAD_ERROR } from "../actions/actionTypes";
 
+import { Actions } from "../../types";
+
 const INITIAL_STATE = {
   data: [],
   error: false,
   loading: false
 };
-
-interface Actions {
-  type?: string;
-  payload?: any;
-}
 
 function movies(state = INITIAL_STATE, action: Actions) {
   switch (action.type) {

@@ -3,29 +3,25 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { getData } from "../../redux/thunks/movies";
-
-import splitUrl from "../../utils/splitUrl";
-
-import { citiesInfos } from "../../constants";
+import { changeCity } from "../../redux/thunks/city";
 
 import Container from "../../components/Container";
 import Header from "../../components/Header";
 import MoviesList from "../../components/MoviesList";
 
-const Home = ({ data, getData, history }) => {
-  const cityParam = citiesInfos[splitUrl(history.location.pathname, 1)].value;
-
+const Home = ({ data, getData, history, changeCity, city }) => {
   useEffect(() => {
-    getData(cityParam && cityParam);
-  }, [getData, cityParam]);
+    getData(city.value);
+  }, [getData, city.value]);
 
   const handleCity = city => {
     history.push(`/${city.path}`);
+    changeCity(city);
   };
 
   return (
     <Container>
-      <Header history={history} onChange={handleCity} movies={data} />
+      <Header history={history} city={city} onChange={handleCity} movies={data} />
       <MoviesList movies={data} />
     </Container>
   );
@@ -34,12 +30,14 @@ const Home = ({ data, getData, history }) => {
 const mapStateToProps = state => ({
   data: state.movies.data,
   loading: state.movies.loading,
-  error: state.movies.error
+  error: state.movies.error,
+  city: state.city.data
 });
 
 const mapDispatchToProps = dispatch => {
   return {
-    getData: bindActionCreators(getData, dispatch)
+    getData: bindActionCreators(getData, dispatch),
+    changeCity: bindActionCreators(changeCity, dispatch)
   };
 };
 

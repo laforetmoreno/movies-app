@@ -2,20 +2,16 @@ import React from "react";
 
 import SelectProvider from "../SelectProvider";
 
-import { availableCities, citiesInfos } from "../../constants";
+import { availableCities } from "../../constants";
 
-import splitUrl from "../../utils/splitUrl";
-
-const CitiesSelector = ({ className, onChange, history }) => {
+const CitiesSelector = ({ className, onChange, history, city }) => {
   const handleChange = value => {
     if (onChange) onChange(value);
   };
 
-  const cityDefault = citiesInfos[splitUrl(history.location.pathname, 1)].name;
-
   return (
     <SelectProvider
-      placeholder={cityDefault ? cityDefault : "Selecione a cidade"}
+      placeholder={city.label}
       onChange={handleChange}
       className={className}
       options={availableCities}
