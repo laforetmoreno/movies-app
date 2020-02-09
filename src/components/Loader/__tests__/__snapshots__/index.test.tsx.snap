@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="ldsRing minHeight"
+>
+  <div
+    style={
+      Object {
+        "border": "1px solid #fff",
+        "borderColor": " transparent transparent transparent",
+        "height": "1px",
+        "width": "1px",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "border": "1px solid #fff",
+        "borderColor": " transparent transparent transparent",
+        "height": "1px",
+        "width": "1px",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "border": "1px solid #fff",
+        "borderColor": " transparent transparent transparent",
+        "height": "1px",
+        "width": "1px",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "border": "1px solid #fff",
+        "borderColor": " transparent transparent transparent",
+        "height": "1px",
+        "width": "1px",
+      }
+    }
+  />
+</div>
+`;

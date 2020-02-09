@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<li>
+  <a
+    className="wrapper"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <img
+      className="image"
+    />
+    <span
+      className="title"
+    />
+    <ul
+      className="tags"
+    >
+      <li
+        className="tag undefined"
+      >
+        
+      </li>
+    </ul>
+  </a>
+</li>
+`;
