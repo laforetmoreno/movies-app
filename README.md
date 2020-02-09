@@ -1,5 +1,13 @@
 # Movies App
 
+## Description
+
+### Example project of the consumption of an API, using React, TypeScript, SCSS Module and Docker.
+
+- Problems found:
+
+  - CORS - Resolved using proxy in package.json
+
 ## Dependencies
 
 - Node.js 10+
@@ -23,3 +31,4 @@
 - `start` - Starts development server
 - `build` - Builds the application assets for production
 - `test` - Runs all unit tests
+- `lint` - Run lint
