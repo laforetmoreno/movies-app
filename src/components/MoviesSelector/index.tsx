@@ -5,16 +5,11 @@ import style from "./style.module.scss";
 
 interface Props {
   className?: string;
-  onChange?: (city: any) => void;
   history?: object;
   options?: any;
 }
 
-const MovieSelector = ({ className, onChange, history, options }: Props) => {
-  const handleChange = value => {
-    if (onChange) onChange(value);
-  };
-
+const MovieSelector = ({ className, history, options }: Props) => {
   const formattedOptions = options.map(option => ({
     value: option.siteURL,
     label: option.title
@@ -31,7 +26,6 @@ const MovieSelector = ({ className, onChange, history, options }: Props) => {
   return (
     <SelectProvider
       placeholder="Selecione um filme"
-      onChange={handleChange}
       className={style.select}
       options={formattedOptions}
       formatOptionLabel={formatOptionLabel}

@@ -7,7 +7,6 @@ import MoviesSelector from "../index";
 it("renders correctly", () => {
   const defaultProps = {
     className: "",
-    onChange: () => {},
     history: {},
     options: []
   };
