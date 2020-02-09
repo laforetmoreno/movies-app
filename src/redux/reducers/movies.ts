@@ -22,7 +22,7 @@ const movies: Reducer<MoviesState> = (state = INITIAL_STATE, action: Actions) =>
     case LOAD_SUCCESS:
       return {
         ...state,
-        data: action.payload.map(x => x.event),
+        data: action.payload,
         loading: false,
         error: false
       };
