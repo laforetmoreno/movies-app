@@ -1,9 +1,9 @@
-import React from "react";
-import { BrowserRouter, Route, Switch, Router } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Route, Switch, Router } from 'react-router-dom';
 
-import { routes } from "./constants";
+import { routes } from './constants';
 
-import Home from "./pages/Home";
+import Home from './pages/Home';
 
 const Routes = ({ history }) => {
   const { home, homeId } = routes;

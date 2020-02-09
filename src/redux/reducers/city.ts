@@ -1,15 +1,15 @@
-import { Reducer } from "redux";
+import { Reducer } from 'redux';
 
-import { CHANGE_CITY } from "../actions/actionTypes";
+import { CHANGE_CITY } from '../actions/actionTypes';
 
-import { Actions, CitiesState } from "../../types";
+import { Actions, CitiesState } from '../../types';
 
 const INITIAL_STATE: CitiesState = {
   data: {
-    name: "rio-de-janeiro",
+    name: 'rio-de-janeiro',
     value: 1,
-    label: "Rio de Janeiro"
-  }
+    label: 'Rio de Janeiro',
+  },
 };
 
 const city: Reducer<CitiesState> = (state = INITIAL_STATE, action: Actions) => {
@@ -17,7 +17,7 @@ const city: Reducer<CitiesState> = (state = INITIAL_STATE, action: Actions) => {
     case CHANGE_CITY:
       return {
         ...state,
-        data: action.payload
+        data: action.payload,
       };
     default:
       return state;

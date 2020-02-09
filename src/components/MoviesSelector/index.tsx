@@ -1,7 +1,7 @@
-import React from "react";
-import SelectProvider from "../SelectProvider";
+import React from 'react';
+import SelectProvider from '../SelectProvider';
 
-import style from "./style.module.scss";
+import style from './style.module.scss';
 
 interface Props {
   className?: string;
@@ -17,16 +17,14 @@ interface Option {
 const MovieSelector = ({ className, history, options }: Props) => {
   const formattedOptions = options.map((option: Option) => ({
     value: option.siteURL,
-    label: option.title
+    label: option.title,
   }));
 
-  const formatOptionLabel = ({ value, label }) => {
-    return (
-      <a className={style.option} rel="noopener noreferrer" target="_blank" href={value}>
-        {label}
-      </a>
-    );
-  };
+  const formatOptionLabel = ({ value, label }) => (
+    <a className={style.option} rel="noopener noreferrer" target="_blank" href={value}>
+      {label}
+    </a>
+  );
 
   return (
     <SelectProvider

@@ -1,5 +1,5 @@
-export const LOAD_REQUEST = "LOAD_REQUEST";
-export const LOAD_SUCCESS = "LOAD_SUCCESS";
-export const LOAD_ERROR = "LOAD_ERROR";
+export const LOAD_REQUEST = 'LOAD_REQUEST';
+export const LOAD_SUCCESS = 'LOAD_SUCCESS';
+export const LOAD_ERROR = 'LOAD_ERROR';
 
-export const CHANGE_CITY = "CHANGE_CITY";
+export const CHANGE_CITY = 'CHANGE_CITY';

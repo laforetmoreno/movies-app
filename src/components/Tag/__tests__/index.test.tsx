@@ -1,12 +1,11 @@
-import React from "react";
-import Link from "../Link.react";
-import renderer from "react-test-renderer";
+import React from 'react';
+import renderer from 'react-test-renderer';
 
-import Tag from "../index";
+import Tag from '../index';
 
-it("renders correctly", () => {
+it('renders correctly', () => {
   const defaultProps = {
-    tag: ""
+    tag: '',
   };
 
   const tree = renderer.create(<Tag {...defaultProps} />).toJSON();

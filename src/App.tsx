@@ -1,9 +1,9 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { createBrowserHistory } from "history";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { createBrowserHistory } from 'history';
 
-import Routes from "./Routes";
-import { store } from "./store";
+import Routes from './Routes';
+import { store } from './store';
 
 const customHistory = createBrowserHistory();
 

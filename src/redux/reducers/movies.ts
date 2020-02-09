@@ -1,13 +1,13 @@
-import { Reducer } from "redux";
+import { Reducer } from 'redux';
 
-import { LOAD_REQUEST, LOAD_SUCCESS, LOAD_ERROR } from "../actions/actionTypes";
+import { LOAD_REQUEST, LOAD_SUCCESS, LOAD_ERROR } from '../actions/actionTypes';
 
-import { Actions, MoviesState } from "../../types";
+import { Actions, MoviesState } from '../../types';
 
 const INITIAL_STATE: MoviesState = {
   data: [],
   error: false,
-  loading: false
+  loading: false,
 };
 
 const movies: Reducer<MoviesState> = (state = INITIAL_STATE, action: Actions) => {
@@ -17,21 +17,21 @@ const movies: Reducer<MoviesState> = (state = INITIAL_STATE, action: Actions) =>
         ...state,
         data: [],
         loading: true,
-        error: false
+        error: false,
       };
     case LOAD_SUCCESS:
       return {
         ...state,
         data: action.payload,
         loading: false,
-        error: false
+        error: false,
       };
     case LOAD_ERROR:
       return {
         ...state,
         data: [],
         loading: false,
-        error: true
+        error: true,
       };
     default:
       return state;

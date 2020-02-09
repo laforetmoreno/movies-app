@@ -1,15 +1,14 @@
-import React from "react";
-import Link from "../Link.react";
-import renderer from "react-test-renderer";
+import React from 'react';
+import renderer from 'react-test-renderer';
 
-import Loader from "../index";
+import Loader from '../index';
 
-it("renders correctly", () => {
+it('renders correctly', () => {
   const defaultProps = {
     size: 1,
     weight: 1,
-    color: "",
-    minHeight: true
+    color: '',
+    minHeight: true,
   };
 
   const tree = renderer.create(<Loader {...defaultProps} />).toJSON();

@@ -1,15 +1,14 @@
-import React from "react";
-import Link from "../Link.react";
-import renderer from "react-test-renderer";
+import React from 'react';
+import renderer from 'react-test-renderer';
 
-import CitiesSelector from "../index";
+import CitiesSelector from '../index';
 
-it("renders correctly", () => {
+it('renders correctly', () => {
   const defaultProps = {
-    onChange: () => {},
-    className: "",
+    onChange: () => ({}),
+    className: '',
     history: {},
-    city: {}
+    city: {},
   };
 
   const tree = renderer.create(<CitiesSelector {...defaultProps} />).toJSON();

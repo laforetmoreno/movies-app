@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import CitiesSelector from "../CitiesSelector";
-import MovieSelector from "../MoviesSelector";
-import { Movie, City } from "../../types";
+import CitiesSelector from '../CitiesSelector';
+import MovieSelector from '../MoviesSelector';
+import { Movie, City } from '../../types';
 
-import style from "./style.module.scss";
+import style from './style.module.scss';
 
 interface Props {
   title?: string;
@@ -15,7 +15,7 @@ interface Props {
   city?: City;
 }
 
-const Header = ({ title = "Filmes", subTitle = "Em cartaz", onChange, history, movies, city }: Props) => (
+const Header = ({ title = 'Filmes', subTitle = 'Em cartaz', onChange, history, movies, city }: Props) => (
   <div className={style.wrapper}>
     <div>
       <h1 className={style.title}>{title}</h1>

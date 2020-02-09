@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import TagList from "../TagList";
+import TagList from '../TagList';
 
-import { Movie } from "../../types";
+import { Movie } from '../../types';
 
-import style from "./style.module.scss";
+import style from './style.module.scss';
 
 interface Props {
   movie?: Movie;

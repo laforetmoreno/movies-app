@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import style from "./style.module.scss";
+import style from './style.module.scss';
 
 const Container = ({ children }: any) => <main className={style.wrapper}>{children}</main>;
 

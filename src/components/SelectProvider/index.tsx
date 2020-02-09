@@ -1,7 +1,7 @@
-import React from "react";
-import Select from "react-select";
+import React from 'react';
+import Select from 'react-select';
 
-import { Options } from "../../types";
+import { Options } from '../../types';
 
 interface Props {
   placeholder?: string;

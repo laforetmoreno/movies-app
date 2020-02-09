@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import style from "./style.module.scss";
+import style from './style.module.scss';
 
 const tagsDict: object = {
-  "Em Alta": "alta",
-  "Oscar 2020": "oscar",
-  Família: "familia",
-  Culturais: "culturais"
+  'Em Alta': 'alta',
+  'Oscar 2020': 'oscar',
+  Família: 'familia',
+  Culturais: 'culturais',
 };
 
 interface Props {

@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import SelectProvider from "../SelectProvider";
+import SelectProvider from '../SelectProvider';
 
-import { City } from "../../types";
+import { City } from '../../types';
 
-import { availableCities } from "../../constants";
+import { availableCities } from '../../constants';
 
 interface Props {
   onChange?: (city: any) => void;
