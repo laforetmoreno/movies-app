@@ -1,11 +1,7 @@
 import React from "react";
 import Select from "react-select";
 
-interface Options {
-  label?: string;
-  path?: string;
-  value?: number;
-}
+import { Options } from "../../types";
 
 interface Props {
   placeholder?: string;

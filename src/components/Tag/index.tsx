@@ -2,7 +2,7 @@ import React from "react";
 
 import style from "./style.module.scss";
 
-var tagsDict: any = {
+const tagsDict: object = {
   "Em Alta": "alta",
   "Oscar 2020": "oscar",
   Família: "familia",
@@ -10,12 +10,11 @@ var tagsDict: any = {
 };
 
 interface Props {
-  tag?: any;
+  tag?: string;
 }
 
 const Tag = ({ tag }: Props) => {
   const className: any = tagsDict[tag];
-
   return <li className={`${style.tag} ${style[className]}`}>{tag}</li>;
 };
 

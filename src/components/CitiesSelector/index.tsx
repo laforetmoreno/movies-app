@@ -2,13 +2,15 @@ import React from "react";
 
 import SelectProvider from "../SelectProvider";
 
+import { City } from "../../types";
+
 import { availableCities } from "../../constants";
 
 interface Props {
   onChange?: (city: any) => void;
   className?: string;
   history?: object;
-  city?: any;
+  city?: City;
 }
 
 const CitiesSelector = ({ className, onChange, history, city }: Props) => {

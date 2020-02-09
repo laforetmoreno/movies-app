@@ -14,7 +14,7 @@ const MoviesList = ({ movies }: Props) => {
   return (
     <ul className={style.wrapper}>
       {movies.map((movie: any) => (
-        <MovieListItem key={movie.title} movie={movie} />
+        <MovieListItem key={movie?.title} movie={movie} />
       ))}
     </ul>
   );

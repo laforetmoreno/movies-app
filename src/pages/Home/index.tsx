@@ -31,11 +31,11 @@ type Props = StateProps & DispatchProps & OwnProps;
 
 const Home = ({ data, getData, history, changeCity, city, loading }: Props) => {
   useEffect(() => {
-    getData(city.value);
-  }, [getData, city.value]);
+    getData(city?.value);
+  }, [getData, city, city.value]);
 
   const handleCity = city => {
-    history.push(`/${city.path}`);
+    history.push(`/${city?.path}`);
     changeCity(city);
   };
 
