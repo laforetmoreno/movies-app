@@ -6,18 +6,18 @@ import { getData } from "../../redux/thunks/movies";
 
 import splitUrl from "../../utils/splitUrl";
 
-import { Cities } from "../../constants";
+import { citiesInfos } from "../../constants";
 
 import Container from "../../components/Container";
 import Header from "../../components/Header";
 import MoviesList from "../../components/MoviesList";
 
 const Home = ({ data, getData, history }) => {
-  const city = Cities[splitUrl(history.location.pathname, 1)];
+  const cityParam = citiesInfos[splitUrl(history.location.pathname, 1)].value;
 
   useEffect(() => {
-    getData(city && city);
-  }, [getData, city]);
+    getData(cityParam && cityParam);
+  }, [getData, cityParam]);
 
   const handleCity = city => {
     history.push(`/${city.path}`);
@@ -25,7 +25,7 @@ const Home = ({ data, getData, history }) => {
 
   return (
     <Container>
-      <Header history={history} onChange={handleCity} />
+      <Header history={history} onChange={handleCity} movies={data} />
       <MoviesList movies={data} />
     </Container>
   );

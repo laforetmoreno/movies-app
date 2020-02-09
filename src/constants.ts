@@ -1,7 +1,13 @@
-export enum Cities {
-  "rio-de-janeiro" = 1,
-  "sao-paulo" = 2
-}
+export const citiesInfos = {
+  "rio-de-janeiro": {
+    name: "Rio de Janeiro",
+    value: 1
+  },
+  "sao-paulo": {
+    name: "São Paulo",
+    value: 2
+  }
+};
 
 export const availableCities = [
   {

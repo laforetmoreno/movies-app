@@ -4,9 +4,11 @@
   padding: 0;
   margin: 0;
   justify-content: center;
+  margin-top: 100px;
 
   @media (max-width: 767px) {
     flex-direction: column;
+    margin-top: 40px;
   }
 
   @media (min-width: 768px) {
