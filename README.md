@@ -9,6 +9,11 @@
 1. `npm install`
 2. `npm start`
 
+## Running the project on Docker
+
+1. `docker build -t movies-app .`
+1. `docker run -p 3000:3000 -d movies-app`
+
 ## Running tests
 
 - `npm run test`
