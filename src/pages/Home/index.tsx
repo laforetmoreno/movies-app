@@ -10,10 +10,12 @@ import { City, Movie } from "../../types";
 import Container from "../../components/Container";
 import Header from "../../components/Header";
 import MoviesList from "../../components/MoviesList";
+import Loader from "../../components/Loader";
 
 interface StateProps {
   data?: Movie[];
   city?: City;
+  loading?: boolean;
 }
 
 interface DispatchProps {
@@ -27,7 +29,7 @@ interface OwnProps {
 
 type Props = StateProps & DispatchProps & OwnProps;
 
-const Home = ({ data, getData, history, changeCity, city }: Props) => {
+const Home = ({ data, getData, history, changeCity, city, loading }: Props) => {
   console.log(data);
   useEffect(() => {
     getData(city.value);
@@ -41,7 +43,7 @@ const Home = ({ data, getData, history, changeCity, city }: Props) => {
   return (
     <Container>
       <Header history={history} city={city} onChange={handleCity} movies={data} />
-      <MoviesList movies={data} />
+      {loading ? <Loader minHeight /> : <MoviesList movies={data} />}
     </Container>
   );
 };
