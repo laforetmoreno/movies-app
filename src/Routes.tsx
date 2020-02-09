@@ -8,7 +8,7 @@ const Routes = ({ history }) => {
     <BrowserRouter>
       <Router history={history}>
         <Switch>
-          <Route path="/" component={Home} exact />
+          <Route path={["/", "/:id"]} component={Home} exact />
         </Switch>
       </Router>
     </BrowserRouter>

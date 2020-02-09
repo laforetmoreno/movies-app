@@ -1,16 +1,16 @@
 import React from "react";
 
-import SelectProvider from "../SelectProvider";
+import CitiesSelect from "../CitiesSelect";
 
 import style from "./style.module.scss";
 
-const Header = ({ title = "Filmes", subTitle = "Em cartaz", movies }) => (
+const Header = ({ title = "Filmes", subTitle = "Em cartaz", onChange, history }) => (
   <div className={style.wrapper}>
     <div>
       <h1 className={style.title}>{title}</h1>
       <h3 className={style.subTitle}>{subTitle}</h3>
     </div>
-    <SelectProvider options={movies} className={style.select} />
+    <CitiesSelect history={history} onChange={onChange} className={style.select} />
   </div>
 );
 

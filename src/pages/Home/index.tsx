@@ -4,18 +4,28 @@ import { bindActionCreators } from "redux";
 
 import { getData } from "../../redux/thunks/movies";
 
+import splitUrl from "../../utils/splitUrl";
+
+import { Cities } from "../../constants";
+
 import Container from "../../components/Container";
 import Header from "../../components/Header";
 import MoviesList from "../../components/MoviesList";
 
-const Home = ({ data, getData }) => {
+const Home = ({ data, getData, history }) => {
+  const city = Cities[splitUrl(history.location.pathname, 1)];
+
   useEffect(() => {
-    getData();
-  }, [getData]);
+    getData(city && city);
+  }, [getData, city]);
+
+  const handleCity = city => {
+    history.push(`/${city.path}`);
+  };
 
   return (
     <Container>
-      <Header movies={data} />
+      <Header history={history} onChange={handleCity} />
       <MoviesList movies={data} />
     </Container>
   );
