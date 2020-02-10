@@ -1,5 +1,7 @@
 import React from 'react';
 
+import placeholderimage from '../../assets/placeholder-image.png';
+
 import TagList from '../TagList';
 
 import { Movie } from '../../types';
@@ -18,7 +20,7 @@ const MovieListItem = ({ movie }: Props) => (
       target="_blank"
       href={movie.trailers[0].url ? movie.trailers[0].url : movie.siteURL}
     >
-      <img className={style.image} alt={movie?.title} src={movie?.images[0]?.url} />
+      <img className={style.image} alt={movie?.title} src={movie?.images[0]?.url || placeholderimage} />
       <span className={style?.title}>{movie?.title}</span>
       <TagList tags={movie.tags} />
     </a>
