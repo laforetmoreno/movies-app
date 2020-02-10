@@ -2,7 +2,7 @@
 
 ## Description
 
-### Example project of the consumption of an API, using React, TypeScript, SCSS Module and Docker.
+Example project of the consumption of an API, using React, TypeScript, SCSS Module and Docker.
 
 - Problems found:
 
