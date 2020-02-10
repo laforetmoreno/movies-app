@@ -4,7 +4,13 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  extends: ['react-app', 'airbnb', 'plugin:@typescript-eslint/recommended', 'prettier/@typescript-eslint'],
+  extends: [
+    'react-app',
+    'airbnb',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -24,7 +30,8 @@ module.exports = {
         extensions: ['.tsx'],
       },
     ],
-    indent: ['warn', 2],
+    indent: ['warn', 2, { SwitchCase: 1 }],
+    'no-shadow': 'off',
     'max-len': ['error', { code: 120 }],
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -48,7 +55,10 @@ module.exports = {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
     'import/resolver': {
-      typescript: {},
+      node: {
+        paths: ['src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
     },
   },
 };

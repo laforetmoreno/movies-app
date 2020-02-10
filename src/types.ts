@@ -31,7 +31,7 @@ export interface Actions {
 }
 
 export interface City {
-  name?: string;
+  path?: string;
   value?: any;
   label?: string;
 }
@@ -40,8 +40,4 @@ export interface MoviesState {
   readonly data: Movie[];
   readonly loading: boolean;
   readonly error: boolean;
-}
-
-export interface CitiesState {
-  readonly data: City;
 }

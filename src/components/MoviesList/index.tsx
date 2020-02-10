@@ -12,7 +12,7 @@ interface Props {
 
 const MoviesList = ({ movies }: Props) => (
   <ul className={style.wrapper}>
-    {movies.map((movie: any) => (
+    {movies.map((movie: Movie) => (
       <MovieListItem key={movie?.title} movie={movie} />
     ))}
   </ul>

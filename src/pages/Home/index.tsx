@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
+import { History } from 'history';
 
 import { getData } from '../../redux/thunks/movies';
-import { changeCity } from '../../redux/thunks/city';
 
 import { City, Movie } from '../../types';
 
@@ -24,24 +24,31 @@ interface DispatchProps {
 }
 
 interface OwnProps {
-  history?: any;
+  history?: History;
 }
 
 type Props = StateProps & DispatchProps & OwnProps;
 
-const Home = ({ data, getData, history, changeCity, city, loading }: Props) => {
-  useEffect(() => {
-    getData(city?.value);
-  }, [getData, city, city.value]);
+const Home = ({ data, getData, history, loading }: Props) => {
+  const [state, setstate] = useState<City>({
+    path: 'rio-de-janeiro',
+    value: 1,
+    label: 'Rio de Janeiro',
+  });
 
-  const handleCity = city => {
-    history.push(`/${city?.path}`);
-    changeCity(city);
+  useEffect(() => {
+    history.push(`/${state?.path}`);
+    getData(state?.value);
+  }, [getData, history, state]);
+
+  const handleCity = cityInfos => {
+    history.push(`/${cityInfos?.path}`);
+    setstate(cityInfos);
   };
 
   return (
     <Container>
-      <Header history={history} city={city} onChange={handleCity} movies={data} />
+      <Header history={history} city={state} onChange={handleCity} movies={data} />
       {loading ? <Loader minHeight /> : <MoviesList movies={data} />}
     </Container>
   );
@@ -50,12 +57,10 @@ const Home = ({ data, getData, history, changeCity, city, loading }: Props) => {
 const mapStateToProps = state => ({
   data: state.movies.data,
   loading: state.movies.loading,
-  city: state.city.data,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   getData: bindActionCreators(getData, dispatch),
-  changeCity: bindActionCreators(changeCity, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

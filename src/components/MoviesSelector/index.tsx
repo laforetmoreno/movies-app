@@ -14,13 +14,18 @@ interface Option {
   title?: string;
 }
 
+interface FormatOptionLabel {
+  value?: string;
+  label?: string;
+}
+
 const MovieSelector = ({ className, history, options }: Props) => {
   const formattedOptions = options.map((option: Option) => ({
     value: option.siteURL,
     label: option.title,
   }));
 
-  const formatOptionLabel = ({ value, label }) => (
+  const formatOptionLabel = ({ value, label }: FormatOptionLabel) => (
     <a className={style.option} rel="noopener noreferrer" target="_blank" href={value}>
       {label}
     </a>

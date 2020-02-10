@@ -7,7 +7,7 @@ import { City } from '../../types';
 import { availableCities } from '../../constants';
 
 interface Props {
-  onChange?: (city: any) => void;
+  onChange?: (city: City) => void;
   className?: string;
   history?: object;
   city?: City;

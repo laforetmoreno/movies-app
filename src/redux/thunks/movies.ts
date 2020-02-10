@@ -4,7 +4,7 @@ import { getAllMovies } from '../../services/movies';
 
 import { LOAD_REQUEST, LOAD_SUCCESS, LOAD_ERROR } from '../actions/actionTypes';
 
-export const getData = (city: number) => async (dispatch: Dispatch) => {
+export const getData = (city: any) => async (dispatch: Dispatch) => {
   dispatch({ type: LOAD_REQUEST });
 
   try {
